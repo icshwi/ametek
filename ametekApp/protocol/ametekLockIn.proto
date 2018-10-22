@@ -1,0 +1,355 @@
+# The protocol file works with IPPort configure.
+# There is possibility to use rs232 instead but then small changes in the protocol file must be done.
+# Remove from input: LF NUL "%r%r" 
+# e.g. istead of:  in "%f" LF NUL "%r%r";
+# do:              in "%f";
+# you have to do it for every input in the protocol file.
+#
+# Tomasz Brys ESS ERIC
+# 8 May 2018
+
+OutTerminator = NUL;
+
+ReplyTimeout = 250;
+WriteTimeout = 250;
+ReadTimeout  = 250;
+LockTimeout  = 2000;
+#--------------------------------------------
+getMagnitude {
+        out "MAG.";
+	in "%f" LF;
+}
+#--------------------------------------------
+getPhase {
+        out "PHA.";
+	in "%f" LF;
+}
+#--------------------------------------------
+getX {
+        out "X.";
+	in "%f" LF;
+}
+#--------------------------------------------
+getVMode{
+        out "VMODE";
+	in "%d" LF;
+}
+#--------------------------------------------
+setVMode{
+        out "VMODE %i";
+        in "";
+	@init {getVMode;}
+}
+#--------------------------------------------
+getIMode{
+        out "IMODE";
+	in "%d" LF;
+}
+#--------------------------------------------
+setIMode{
+        out "IMODE %i";
+        in "";
+	@init {getIMode;}
+}
+#--------------------------------------------
+getY {
+        out "Y.";
+	in "%f" LF;
+}
+#--------------------------------------------
+getTimeConstant {
+        out "TC";
+	in "%d" LF;
+}
+
+#--------------------------------------------
+setTimeConstant {
+        out "TC %i";
+        in "";
+	@init {getTimeConstant;}
+}
+
+#--------------------------------------------
+getACGainControl {
+        out "AUTOMATIC";
+	in "%d" LF;
+}
+
+#--------------------------------------------
+setACGainControl {
+        out "AUTOMATIC %i";
+        in "";
+	@init {getACGainControl;}
+}
+
+#--------------------------------------------
+getACGain {
+        out "ACGAIN";
+	in "%d" LF;
+}
+
+#--------------------------------------------
+setACGain {
+        out "ACGAIN %i";
+        in "";
+	@init {getACGain;}
+}
+
+#--------------------------------------------
+getStatus {
+        out "ST";
+	in "%d" LF;
+}
+
+#--------------------------------------------
+getOverloadByte {
+        out "N";
+	in "%d" LF;
+}
+
+#--------------------------------------------
+getSensitivity {
+        out "SEN";
+	in "%f" LF;
+}
+
+#--------------------------------------------
+setSensitivity {
+        out "SEN %i";
+        in "";
+	@init {getSensitivity;}
+}
+
+#--------------------------------------------
+getRefSource {
+        out "IE";
+	in "%d" LF;
+}
+
+#--------------------------------------------
+setRefSource {
+        out "IE %i";
+        in "";
+	@init {getRefSource;}
+}
+
+#--------------------------------------------
+getRefFreq {
+        out "FRQ.";
+	in "%f" LF;
+}
+
+#--------------------------------------------
+getRefPhase {
+        out "REFP.";
+	in "%f" LF;
+}
+
+#--------------------------------------------
+setAutoPhase {
+        out "AQN";
+        in "";
+}
+
+#--------------------------------------------
+getRemoteControl {
+        out "REMOTE";
+	in "%d" LF;
+}
+
+#--------------------------------------------
+setRemoteControl {
+        out "REMOTE %i";
+        in "";
+	@init {getRemoteControl;}
+}
+#--------------------------------------------
+getXOutputOffset{
+        out "XOF";
+	in "%*d,%s" LF;
+}
+#--------------------------------------------
+setXOutputOffset{
+        out "XOF %i %(\$1)i";
+        in "";
+	@init {out "XOF"; in "%*i,%i" LF;}
+}
+#--------------------------------------------
+getYOutputOffset{
+        out "YOF";
+	in "%*d,%s" LF;
+}
+#--------------------------------------------
+setYOutputOffset{
+        out "YOF %i %(\$1)i";
+        in "";
+	@init {out "YOF"; in "%*i,%i" LF;}
+}
+#--------------------------------------------
+getOscillatorFreq{
+        out "OF.";
+	in "%f" LF;
+}
+#--------------------------------------------
+# Need to limit output decimal points to get correct comms
+setOscillatorFreq{
+        out "OF. %.3f";
+        in "";
+	@init {getOscillatorFreq;}
+}
+#--------------------------------------------
+getOscillatorAmpl{
+        out "OA.";
+	in "%f" LF;
+}
+#--------------------------------------------
+setOscillatorAmpl{
+        out "OA. %f";
+        in "";
+	@init {getOscillatorAmpl;}
+}
+#--------------------------------------------
+getReferencePhase{
+        out "REFP%(\$1)s";
+	in "%d" LF;
+}
+#--------------------------------------------
+setReferencePhase{
+        out "REFP%(\$1)s %i";
+        in "";
+	@init {getReferencePhase;}
+}
+
+#--------------------------------------------
+setAutoDefault{
+        out "ADF 1";
+        in "";
+}
+#--------------------------------------------
+getFStart{
+        out "FSTART.";
+	in "%f" LF;
+}
+#--------------------------------------------
+# Need to limit output decimal points to get correct comms
+setFStart{
+        out "FSTART. %.3f";
+        in "";
+	@init {getFStart;}
+}
+#--------------------------------------------
+getFStop{
+        out "FSTOP.";
+	in "%f" LF;
+}
+#--------------------------------------------
+# Need to limit output decimal points to get correct comms
+setFStop{
+        out "FSTOP. %.3f";
+        in "";
+	@init {getFStop;}
+}
+#--------------------------------------------
+getFStep{
+        out "FSTEP.";
+	in "%E,%*d" LF;
+}
+#--------------------------------------------
+getFStepScale{
+        out "FSTEP.";
+	in "%*E,%d" LF;
+}
+#--------------------------------------------
+setFStep{
+        out "FSTEP. %.3f %(\$1)i";
+        in "";
+	@init { getFStep ;}
+}
+#--------------------------------------------
+getControlSweep{
+        out "SWEEP";
+	in "%d" LF;
+}
+#--------------------------------------------
+setControlSweep{
+        out "SWEEP %i";
+        in "";
+	@init { getControlSweep; }
+}
+#--------------------------------------------
+getSweepRate{
+        out "SRATE.";
+	in "%f" LF;
+}
+#--------------------------------------------
+setSweepRate{
+        out "SRATE. %f";
+        in "";
+	@init { getSweepRate; }
+}
+#--------------------------------------------
+setNewCurve{
+        out "NC";
+        in "";
+} 
+#--------------------------------------------
+getCurveBuffer{
+        out "CBD";
+	in "%d" LF;
+} 
+#--------------------------------------------
+setCurveBuffer{
+        out "CBD %d";
+        in "";
+	@init { getCurveBuffer; }
+} 
+#--------------------------------------------
+getCurveLength{
+        out "LEN";
+	in "%d" LF;
+} 
+#--------------------------------------------
+setCurveLength{
+        out "LEN %i";
+        in "";
+	@init { getCurveLength; }
+} 
+#--------------------------------------------
+getStorage{
+        out "STR";
+	in "%d" LF;
+} 
+#--------------------------------------------
+setStorage{
+        out "STR %i";
+        in "";
+	@init {getStorage;}
+} 
+#--------------------------------------------
+setTakeData{
+        out "TD";
+        in "";
+} 
+#--------------------------------------------
+setHaltAcquisition{
+        out "HC";
+        in "";
+} 
+#--------------------------------------------
+getStatusMonitor{
+        out "M";
+	in "%d,%*d,%*d,%*d" LF;
+} 
+#--------------------------------------------
+getCurve{
+        out "DC. \$1";
+	Separator = LF;
+	ExtraInput = Ignore;
+	in "%E";
+}
+#getCurveY{
+        #out "DC. 1";
+	#Separator = LF;
+	#ExtraInput = Ignore;
+	#in "%E";
+#}
