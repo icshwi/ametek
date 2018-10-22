@@ -933,7 +933,7 @@ record(calcout, "$(P)$(Q):CBD_CALC") {
     field(INPD, "32784")
     field(CALC, "(A|D)+(B*C)")
     field(OUT,  "$(P)$(Q):CBD PP")
-    field(OOPT, "On Change")
+    field(OOPT, "Every Time")
 }
 
 record(ao, "$(P)$(Q):CBD") {
