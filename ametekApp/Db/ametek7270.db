@@ -926,7 +926,12 @@ record(calcout, "$(P)$(Q):CBD_CALC") {
     field(INPA, "$(P)$(Q):CBD_1")
     field(INPB, "$(P)$(Q):CBD_2")
     field(INPC, "65536")
-    field(CALC, "A+B*C")
+    # Ensure bits 4 and 15 are set.
+    # Bit 4 enables sensitivity recording, bit 15 enables
+    # reference frequency recording.
+    # 2^4 + 2^15 = 16 + 32768 = 32784
+    field(INPD, "32784")
+    field(CALC, "(A|D)+(B*C)")
     field(OUT,  "$(P)$(Q):CBD PP")
     field(OOPT, "On Change")
 }
