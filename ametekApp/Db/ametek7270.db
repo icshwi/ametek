@@ -921,10 +921,14 @@ record(calcout, "$(P)$(Q):CBD_CALC") {
     field(DESC, "Curve buffer calculation")
     field(PINI, "YES")
     field(INPA, "$(P)$(Q):CBD_SELECT")
+    # Ensure bits 4 and 15 are set.
+    # Bit 4 enables sensitivity recording, bit 15 enables
+    # reference frequency recording.
+    # 2^4 + 2^15 = 16 + 32768 = 32784
     field(INPB, "32784")
     field(CALC, "A OR B")
     field(OUT,  "$(P)$(Q):CBD PP")
-    field(OOPT, "On Change")
+    field(OOPT, "Every Time")
 }
 
 record(ao, "$(P)$(Q):CBD") {
