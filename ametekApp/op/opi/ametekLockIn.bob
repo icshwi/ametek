@@ -1,0 +1,2188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <macros>
+    <P>A</P>
+    <Q>M</Q>
+  </macros>
+  <x>271</x>
+  <y>101</y>
+  <width>1130</width>
+  <height>890</height>
+  <background_color>
+    <color name="GLOBAL canvas" red="200" green="200" blue="200">
+    </color>
+  </background_color>
+  <widget type="label" version="2.0.0">
+    <name>EDM Label</name>
+    <text>$(P)$(Q)</text>
+    <width>1110</width>
+    <height>32</height>
+    <font>
+      <font family="arial" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="LINAC title" red="185" green="198" blue="184">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color name="black-14" red="0" green="0" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="tabs" version="2.0.0">
+    <name>Tabs</name>
+    <tabs>
+      <tab>
+        <name>Outputs</name>
+        <children>
+          <widget type="group" version="2.0.0">
+            <name>Outputs</name>
+            <x>10</x>
+            <y>76</y>
+            <width>350</width>
+            <height>184</height>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Magnitude</text>
+              <x>8</x>
+              <y>68</y>
+              <width>76</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update</name>
+              <pv_name>$(P)$(Q):Y_RBV</pv_name>
+              <x>102</x>
+              <y>39</y>
+              <width>207</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>4</precision>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update</name>
+              <pv_name>$(P)$(Q):X_RBV</pv_name>
+              <x>102</x>
+              <y>10</y>
+              <width>207</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>4</precision>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_3</name>
+              <text>Xch output</text>
+              <x>8</x>
+              <y>10</y>
+              <width>78</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_4</name>
+              <text>Ych output</text>
+              <x>8</x>
+              <y>39</y>
+              <width>78</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_9</name>
+              <text>Phase</text>
+              <x>8</x>
+              <y>103</y>
+              <width>43</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update</name>
+              <pv_name>$(P)$(Q):MAGNITUDE_RBV</pv_name>
+              <x>102</x>
+              <y>68</y>
+              <width>207</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>1</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_11</name>
+              <pv_name>$(P)$(Q):PHASE_RBV</pv_name>
+              <x>102</x>
+              <y>103</y>
+              <width>207</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>1</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="2.0.0">
+            <name>Overload</name>
+            <x>10</x>
+            <y>266</y>
+            <width>350</width>
+            <height>250</height>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>(X1) output</text>
+              <x>29</x>
+              <y>20</y>
+              <width>79</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>(Y1) output</text>
+              <x>29</x>
+              <y>44</y>
+              <width>79</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_1</name>
+              <text>(X2) output</text>
+              <x>24</x>
+              <y>69</y>
+              <width>81</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>(Y2) output</text>
+              <x>24</x>
+              <y>93</y>
+              <width>81</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>CH1 output</text>
+              <x>24</x>
+              <y>117</y>
+              <width>80</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>CH2 output</text>
+              <x>24</x>
+              <y>141</y>
+              <width>81</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>CH3 output</text>
+              <x>24</x>
+              <y>165</y>
+              <width>82</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_2</name>
+              <text>CH4 output</text>
+              <x>29</x>
+              <y>188</y>
+              <width>82</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="byte_monitor" version="2.0.0">
+              <name>EDM Byte</name>
+              <pv_name>$(P)$(Q):OVERLOAD</pv_name>
+              <x>269</x>
+              <y>10</y>
+              <width>26</width>
+              <height>194</height>
+              <bitReverse>true</bitReverse>
+              <horizontal>false</horizontal>
+              <square>true</square>
+              <off_color>
+                <color name="green-19" red="0" green="128" blue="0">
+                </color>
+              </off_color>
+              <on_color>
+                <color name="Monitor: NORMAL" red="0" green="255" blue="0">
+                </color>
+              </on_color>
+              <rules>
+                <rule name="onColorAlarm" prop_id="on_color" out_exp="false">
+                  <exp bool_exp="pvLegacySev0==-1">
+                    <value>
+                      <color name="Text" red="25" green="25" blue="25">
+                      </color>
+                    </value>
+                  </exp>
+                  <exp bool_exp="pvLegacySev0==1">
+                    <value>
+                      <color name="Text" red="25" green="25" blue="25">
+                      </color>
+                    </value>
+                  </exp>
+                  <exp bool_exp="pvLegacySev0==2">
+                    <value>
+                      <color name="Text" red="25" green="25" blue="25">
+                      </color>
+                    </value>
+                  </exp>
+                  <pv_name>$(P)$(Q):OVERLOAD</pv_name>
+                </rule>
+              </rules>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="group" version="2.0.0">
+            <name>Remote</name>
+            <x>10</x>
+            <y>10</y>
+            <width>350</width>
+            <height>62</height>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button</name>
+              <pv_name>$(P)$(Q):REMOTE</pv_name>
+              <x>2</x>
+              <width>89</width>
+              <height>24</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <actions>
+                <action type="write_pv">
+                  <pv_name>$P)$(Q):REMOTE</pv_name>
+                  <value>0</value>
+                  <description>Write PV</description>
+                </action>
+              </actions>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_2</name>
+              <pv_name>$(P)$(Q):REMOTE_RBV</pv_name>
+              <x>119</x>
+              <y>3</y>
+              <width>180</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>6</format>
+              <precision>1</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="2.0.0">
+            <name>Status</name>
+            <x>10</x>
+            <y>526</y>
+            <width>350</width>
+            <height>248</height>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Cmd complete</text>
+              <x>24</x>
+              <y>13</y>
+              <width>102</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Invalid cmd</text>
+              <x>24</x>
+              <y>37</y>
+              <width>81</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Param err.</text>
+              <x>24</x>
+              <y>61</y>
+              <width>75</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Ref unlock</text>
+              <x>24</x>
+              <y>85</y>
+              <width>75</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Overload</text>
+              <x>24</x>
+              <y>109</y>
+              <width>64</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>New ADC vals</text>
+              <x>24</x>
+              <y>133</y>
+              <width>98</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Inp overload</text>
+              <x>24</x>
+              <y>157</y>
+              <width>88</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Data avail.</text>
+              <x>24</x>
+              <y>181</y>
+              <width>75</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="byte_monitor" version="2.0.0">
+              <name>EDM Byte</name>
+              <pv_name>$(P)$(Q):STAT</pv_name>
+              <x>268</x>
+              <y>10</y>
+              <width>26</width>
+              <height>194</height>
+              <bitReverse>true</bitReverse>
+              <horizontal>false</horizontal>
+              <square>true</square>
+              <off_color>
+                <color name="green-19" red="0" green="128" blue="0">
+                </color>
+              </off_color>
+              <on_color>
+                <color name="Monitor: NORMAL" red="0" green="255" blue="0">
+                </color>
+              </on_color>
+              <rules>
+                <rule name="onColorAlarm" prop_id="on_color" out_exp="false">
+                  <exp bool_exp="pvLegacySev0==-1">
+                    <value>
+                      <color name="Text" red="25" green="25" blue="25">
+                      </color>
+                    </value>
+                  </exp>
+                  <exp bool_exp="pvLegacySev0==1">
+                    <value>
+                      <color name="Text" red="25" green="25" blue="25">
+                      </color>
+                    </value>
+                  </exp>
+                  <exp bool_exp="pvLegacySev0==2">
+                    <value>
+                      <color name="Text" red="25" green="25" blue="25">
+                      </color>
+                    </value>
+                  </exp>
+                  <pv_name>$(P)$(Q):STAT</pv_name>
+                </rule>
+              </rules>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Settings</name>
+        <children>
+          <widget type="group" version="2.0.0">
+            <name>Signal channel</name>
+            <y>18</y>
+            <width>370</width>
+            <height>220</height>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button_4</name>
+              <pv_name>$(P)$(Q):IMODE</pv_name>
+              <x>91</x>
+              <y>6</y>
+              <width>114</width>
+              <height>24</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <actions>
+                <action type="write_pv">
+                  <pv_name>$P)$(Q):REMOTE</pv_name>
+                  <value>0</value>
+                  <description>Write PV</description>
+                </action>
+              </actions>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_8</name>
+              <pv_name>$(P)$(Q):IMODE_RBV</pv_name>
+              <x>227</x>
+              <y>6</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>6</format>
+              <precision>4</precision>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button_5</name>
+              <pv_name>$(P)$(Q):VMODE</pv_name>
+              <x>91</x>
+              <y>50</y>
+              <width>114</width>
+              <height>24</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <actions>
+                <action type="write_pv">
+                  <pv_name>$P)$(Q):REMOTE</pv_name>
+                  <value>0</value>
+                  <description>Write PV</description>
+                </action>
+              </actions>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_9</name>
+              <pv_name>$(P)$(Q):VMODE_RBV</pv_name>
+              <x>227</x>
+              <y>50</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>6</format>
+              <precision>4</precision>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="action_button" version="3.0.0">
+              <name>EDM Exit Button_2</name>
+              <actions>
+                <action type="write_pv">
+                  <pv_name>$(P)$(Q):AS.PROC</pv_name>
+                  <value>1</value>
+                  <description>AutoSensitivity</description>
+                </action>
+              </actions>
+              <pv_name>$(P)$(Q):AS</pv_name>
+              <text>SET</text>
+              <x>129</x>
+              <y>89</y>
+              <width>78</width>
+              <height>25</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="purple-46" red="192" green="0" blue="192">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <tooltip>$(actions)</tooltip>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Gain control</text>
+              <x>4</x>
+              <y>127</y>
+              <width>86</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button</name>
+              <pv_name>$(P)$(Q):AUTOMATIC</pv_name>
+              <x>129</x>
+              <y>127</y>
+              <width>78</width>
+              <height>25</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update</name>
+              <pv_name>$(P)$(Q):AUTOMATIC_RBV</pv_name>
+              <x>227</x>
+              <y>127</y>
+              <width>90</width>
+              <height>22</height>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>6</format>
+              <precision>4</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>AC Gain</text>
+              <x>4</x>
+              <y>157</y>
+              <width>56</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button</name>
+              <pv_name>$(P)$(Q):ACGAIN</pv_name>
+              <x>129</x>
+              <y>157</y>
+              <width>78</width>
+              <height>25</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update</name>
+              <pv_name>$(P)$(Q):ACGAIN_RBV</pv_name>
+              <x>227</x>
+              <y>158</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>6</format>
+              <precision>4</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_14</name>
+              <text>Auto Sensitivity</text>
+              <x>4</x>
+              <y>89</y>
+              <width>112</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_15</name>
+              <text>IMode</text>
+              <x>4</x>
+              <y>6</y>
+              <width>44</width>
+              <height>18</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_16</name>
+              <text>VMode</text>
+              <x>4</x>
+              <y>50</y>
+              <width>50</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="2.0.0">
+            <name>Internal Oscillator</name>
+            <y>246</y>
+            <width>370</width>
+            <height>110</height>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button_1</name>
+              <pv_name>$(P)$(Q):OF_TOGGLE</pv_name>
+              <x>14</x>
+              <y>14</y>
+              <width>75</width>
+              <height>24</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <actions>
+                <action type="write_pv">
+                  <pv_name>$P)$(Q):REMOTE</pv_name>
+                  <value>0</value>
+                  <description>Write PV</description>
+                </action>
+              </actions>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+            <widget type="spinner" version="2.0.0">
+              <name>Spinner_2</name>
+              <pv_name>$(P)$(Q):OF</pv_name>
+              <x>103</x>
+              <y>14</y>
+              <width>90</width>
+              <foreground_color>
+                <color red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color red="70" green="70" blue="70">
+                </color>
+              </background_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_5</name>
+              <pv_name>$(P)$(Q):OF_RBV</pv_name>
+              <x>227</x>
+              <y>9</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>4</precision>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button_2</name>
+              <pv_name>$(P)$(Q):OA_TOGGLE</pv_name>
+              <x>14</x>
+              <y>43</y>
+              <width>75</width>
+              <height>24</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <actions>
+                <action type="write_pv">
+                  <pv_name>$P)$(Q):REMOTE</pv_name>
+                  <value>0</value>
+                  <description>Write PV</description>
+                </action>
+              </actions>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+            <widget type="spinner" version="2.0.0">
+              <name>Spinner_3</name>
+              <pv_name>$(P)$(Q):OA</pv_name>
+              <x>103</x>
+              <y>43</y>
+              <width>90</width>
+              <foreground_color>
+                <color red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color red="70" green="70" blue="70">
+                </color>
+              </background_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_6</name>
+              <pv_name>$(P)$(Q):OA_RBV</pv_name>
+              <x>227</x>
+              <y>43</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>4</precision>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="2.0.0">
+            <name>Reference</name>
+            <y>376</y>
+            <width>370</width>
+            <height>210</height>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <class>CAPTION</class>
+              <text>Source</text>
+              <x>8</x>
+              <y>4</y>
+              <width>50</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color use_class="true">
+                <color name="Text" red="25" green="25" blue="25">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <horizontal_alignment use_class="true">2</horizontal_alignment>
+              <vertical_alignment use_class="true">1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Frequency</text>
+              <x>9</x>
+              <y>38</y>
+              <width>75</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Phase</text>
+              <x>9</x>
+              <y>89</y>
+              <width>43</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button</name>
+              <pv_name>$(P)$(Q):REFSOURCE</pv_name>
+              <x>89</x>
+              <width>94</width>
+              <height>25</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update</name>
+              <pv_name>$(P)$(Q):FRQ_RBV</pv_name>
+              <x>227</x>
+              <y>41</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="action_button" version="3.0.0">
+              <name>EDM Message Button</name>
+              <actions>
+                <action type="write_pv">
+                  <pv_name>$(P)$(Q):AQN.PROC</pv_name>
+                  <value>1</value>
+                  <description>AutoPhase</description>
+                </action>
+              </actions>
+              <pv_name>$(P)$(Q):AQN</pv_name>
+              <text>SET</text>
+              <x>109</x>
+              <y>143</y>
+              <width>89</width>
+              <height>25</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color red="192" green="0" blue="192">
+                </color>
+              </foreground_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update</name>
+              <pv_name>$(P)$(Q):REFSOURCE_RBV</pv_name>
+              <x>227</x>
+              <y>4</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>6</format>
+              <precision>4</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button_3</name>
+              <pv_name>$(P)$(Q):REFP_TOGGLE</pv_name>
+              <x>9</x>
+              <y>109</y>
+              <width>90</width>
+              <height>24</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <actions>
+                <action type="write_pv">
+                  <pv_name>$P)$(Q):REMOTE</pv_name>
+                  <value>0</value>
+                  <description>Write PV</description>
+                </action>
+              </actions>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+            <widget type="spinner" version="2.0.0">
+              <name>Spinner_4</name>
+              <pv_name>$(P)$(Q):REFP</pv_name>
+              <x>109</x>
+              <y>110</y>
+              <width>90</width>
+              <foreground_color>
+                <color red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color red="70" green="70" blue="70">
+                </color>
+              </background_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_7</name>
+              <pv_name>$(P)$(Q):REFP_RBV</pv_name>
+              <x>227</x>
+              <y>110</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>4</precision>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_12</name>
+              <text>Autophase</text>
+              <x>9</x>
+              <y>150</y>
+              <width>77</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button_7</name>
+              <pv_name>$(P)$(Q):FRQ_TOGGLE</pv_name>
+              <x>89</x>
+              <y>39</y>
+              <height>25</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="group" version="2.0.0">
+            <name>Auto Default and Calibration</name>
+            <y>708</y>
+            <width>370</width>
+            <height>100</height>
+            <widget type="action_button" version="3.0.0">
+              <name>EDM Exit Button_1</name>
+              <actions>
+                <action type="write_pv">
+                  <pv_name>$(P)$(Q):ADF.PROC</pv_name>
+                  <value>1</value>
+                  <description>AutoDefauldCalibration</description>
+                </action>
+              </actions>
+              <pv_name>$(P)$(Q):ADF</pv_name>
+              <text>SET</text>
+              <x>54</x>
+              <y>14</y>
+              <width>81</width>
+              <height>25</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="purple-46" red="192" green="0" blue="192">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <tooltip>$(actions)</tooltip>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_13</name>
+              <text>ADF</text>
+              <x>4</x>
+              <y>17</y>
+              <width>30</width>
+              <height>17</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="2.0.0">
+            <name>Signal channel output amplifirer</name>
+            <y>596</y>
+            <width>370</width>
+            <height>100</height>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_10</name>
+              <text>X offset ctrl.</text>
+              <x>4</x>
+              <y>12</y>
+              <width>89</width>
+              <height>18</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_11</name>
+              <text>Y offset ctrl.</text>
+              <x>4</x>
+              <y>40</y>
+              <width>89</width>
+              <height>18</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="spinner" version="2.0.0">
+              <name>Spinner</name>
+              <pv_name>$(P)$(Q):XOF</pv_name>
+              <x>95</x>
+              <y>12</y>
+              <width>90</width>
+              <foreground_color>
+                <color red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color red="70" green="70" blue="70">
+                </color>
+              </background_color>
+            </widget>
+            <widget type="spinner" version="2.0.0">
+              <name>Spinner_1</name>
+              <pv_name>$(P)$(Q):YOF</pv_name>
+              <x>95</x>
+              <y>40</y>
+              <width>90</width>
+              <foreground_color>
+                <color red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color red="70" green="70" blue="70">
+                </color>
+              </background_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_3</name>
+              <pv_name>$(P)$(Q):XOF_OUT</pv_name>
+              <x>227</x>
+              <y>12</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <precision>4</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_4</name>
+              <pv_name>$(P)$(Q):YOF_OUT</pv_name>
+              <x>227</x>
+              <y>40</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <precision>4</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Sensitivity</name>
+        <children>
+          <widget type="group" version="2.0.0">
+            <name>Sensitivity</name>
+            <y>17</y>
+            <width>360</width>
+            <height>93</height>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update</name>
+              <pv_name>$(P)$(Q):SENS_RBV</pv_name>
+              <x>209</x>
+              <y>30</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="spinner" version="2.0.0">
+              <name>Spinner_5</name>
+              <pv_name>$(P)$(Q):SENS</pv_name>
+              <x>9</x>
+              <y>30</y>
+              <width>120</width>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_5</name>
+              <text>IMode</text>
+              <x>19</x>
+              <width>44</width>
+              <height>18</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_12</name>
+              <pv_name>$(P)$(Q):IMODE_RBV</pv_name>
+              <x>209</x>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>1</format>
+              <precision>0</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="picture" version="2.0.0">
+            <name>Picture_2</name>
+            <file>Sensitivity.png</file>
+            <x>20</x>
+            <y>107</y>
+            <width>340</width>
+            <height>700</height>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>Time Constant</name>
+        <children>
+          <widget type="group" version="2.0.0">
+            <name>Signal channel output filter</name>
+            <x>20</x>
+            <y>18</y>
+            <width>316</width>
+            <height>100</height>
+            <widget type="combo" version="2.0.0">
+              <name>EDM menu button_6</name>
+              <pv_name>$(P)$(Q):ACGAIN:CNTRL</pv_name>
+              <x>84</x>
+              <y>10</y>
+              <width>89</width>
+              <height>25</height>
+              <font>
+                <font family="arial" style="REGULAR" size="16.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label_8</name>
+              <text>Noise Mode</text>
+              <x>4</x>
+              <y>12</y>
+              <width>83</width>
+              <height>18</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="label" version="2.0.0">
+              <name>EDM Label</name>
+              <text>Time const.</text>
+              <x>4</x>
+              <y>40</y>
+              <width>83</width>
+              <height>18</height>
+              <font>
+                <font family="arial" style="BOLD" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <border_color>
+                <color name="black-14" red="0" green="0" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_1</name>
+              <pv_name>$(P)$(Q):TC_RBV</pv_name>
+              <x>186</x>
+              <y>38</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>1</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>EDM Text Update_10</name>
+              <x>186</x>
+              <y>12</y>
+              <width>90</width>
+              <font>
+                <font family="arial" style="REGULAR" size="14.0">
+                </font>
+              </font>
+              <foreground_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="grey-12" red="70" green="70" blue="70">
+                </color>
+              </background_color>
+              <format>2</format>
+              <precision>1</precision>
+              <show_units>false</show_units>
+              <horizontal_alignment>1</horizontal_alignment>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_width>2</border_width>
+              <border_color>
+                <color name="green-16" red="0" green="224" blue="0">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="spinner" version="2.0.0">
+              <name>EDM menu button</name>
+              <pv_name>$(P)$(Q):TC</pv_name>
+              <x>83</x>
+              <y>37</y>
+              <width>89</width>
+              <height>24</height>
+              <foreground_color>
+                <color name="Controller" red="0" green="0" blue="255">
+                </color>
+              </foreground_color>
+              <background_color>
+                <color name="GLOBAL canvas" red="200" green="200" blue="200">
+                </color>
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+            </widget>
+          </widget>
+          <widget type="picture" version="2.0.0">
+            <name>Picture_1</name>
+            <file>TimeCinstant.png</file>
+            <x>10</x>
+            <y>127</y>
+            <width>350</width>
+            <height>680</height>
+          </widget>
+        </children>
+      </tab>
+    </tabs>
+    <y>32</y>
+    <width>410</width>
+    <height>828</height>
+    <active_tab>1</active_tab>
+    <direction>1</direction>
+  </widget>
+  <widget type="databrowser" version="2.0.0">
+    <name>X/Y Plot</name>
+    <file>data.plt</file>
+    <x>460</x>
+    <y>32</y>
+    <width>650</width>
+    <height>408</height>
+    <tooltip>$(traces[0].y_pv)</tooltip>
+  </widget>
+  <widget type="databrowser" version="2.0.0">
+    <name>X/Y Plot_1</name>
+    <x>460</x>
+    <y>450</y>
+    <width>650</width>
+    <height>408</height>
+    <tooltip>$(traces[0].y_pv)</tooltip>
+  </widget>
+</display>
