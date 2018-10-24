@@ -86,29 +86,59 @@ record(sseq, "$(P)$(Q):SCAN_REC3"){
 }
 
 #-----------------------------------------------------------------------------------
-record(ai, "$(P)$(Q):MAGNITUDE_RBV") {
-    field(DESC, "Input Magnitude RBV")
-    field(DTYP, "stream")
-    field(SCAN, "5 second")
-    field(INP,  "@ametekLockIn.proto getMagnitude $(PORT)")
-}
-
+# Inputs:
 #-----------------------------------------------------------------------------------
 record(ai, "$(P)$(Q):X_RBV") {
     field(DESC, "X channel RBV")
     field(DTYP, "stream")
+    field(EGU,  "V")
     field(SCAN, "5 second")
     field(INP,  "@ametekLockIn.proto getX $(PORT)")
 }
-
+#-----------------------------------------------------------------------------------
+record(compress, "$(P)$(Q):X_buf") {
+    field(DESC,  "X circular buffer")
+    field(SCAN,  "1 second")
+    field(ALG,   "Circular Buffer")
+    field(NSAM,  "5")
+    field(INP,   "$(P)$(Q):X_RBV")
+    field(FLNK,  "$(P)$(Q):X_avg")
+}
+#-----------------------------------------------------------------------------------
+record(acalcout, "$(P)$(Q):X_avg") {
+    field(DESC,  "Moving average of Y")
+    field(EGU,   "V")
+    field(INAA,  "$(P)$(Q):X_buf")
+    field(NELM,  "5")
+    field(CALC,  "AVG(AA)")  
+}
+#-----------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------
 record(ai, "$(P)$(Q):Y_RBV") {
     field(DESC, "Y channel RBV")
     field(DTYP, "stream")
     field(SCAN, "5 second")
+    field(EGU,  "V")
     field(INP,  "@ametekLockIn.proto getY $(PORT)")
 }
-
+#-----------------------------------------------------------------------------------
+record(compress, "$(P)$(Q):Y_buf") {
+    field(DESC,  "Y circular buffer")
+    field(SCAN,  "1 second")
+    field(ALG,   "Circular Buffer")
+    field(NSAM,  "5")
+    field(INP,   "$(P)$(Q):Y_RBV")
+    field(FLNK,  "$(P)$(Q):Y_avg")
+}
+#-----------------------------------------------------------------------------------
+record(acalcout, "$(P)$(Q):Y_avg") {
+    field(DESC,  "Moving average of Y")
+    field(EGU,   "V")
+    field(INAA,  "$(P)$(Q):Y_buf")
+    field(NELM,  "5")
+    field(CALC,  "AVG(AA)")  
+}
+#-----------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------
 record(ai, "$(P)$(Q):PHASE_RBV") {
     field(DESC, "Phase RBV")
@@ -118,7 +148,87 @@ record(ai, "$(P)$(Q):PHASE_RBV") {
     field(SCAN, "5 second")
     field(INP,  "@ametekLockIn.proto getPhase $(PORT)")
 }
-
+#-----------------------------------------------------------------------------------
+record(compress, "$(P)$(Q):PHASE_buf") {
+    field(DESC,  "PHASE circular buffer")
+    field(SCAN,  "1 second")
+    field(ALG,   "Circular Buffer")
+    field(NSAM,  "5")
+    field(INP,   "$(P)$(Q):PHASE_RBV")
+    field(FLNK,  "$(P)$(Q):PHASE_avg")
+}
+#-----------------------------------------------------------------------------------
+record(acalcout, "$(P)$(Q):PHASE_avg") {
+    field(DESC,  "Moving average of PHASE")
+    field(EGU,   "deg")
+    field(INAA,  "$(P)$(Q):PHASE_buf")
+    field(NELM,  "5")
+    field(CALC,  "AVG(AA)")  
+}
+#-----------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+record(ai, "$(P)$(Q):MAGNITUDE_RBV") {
+    field(DESC, "Input Magnitude RBV")
+    field(DTYP, "stream")
+    field(EGU,  "V")
+    field(SCAN, "5 second")
+    field(INP,  "@ametekLockIn.proto getMagnitude $(PORT)")
+}
+#-----------------------------------------------------------------------------------
+record(compress, "$(P)$(Q):MAGNITUDE_buf") {
+    field(DESC,  "MAGNITUDE circular buffer")
+    field(SCAN,  "1 second")
+    field(ALG,   "Circular Buffer")
+    field(NSAM,  "5")
+    field(INP,   "$(P)$(Q):MAGNITUDE_RBV")
+    field(FLNK,  "$(P)$(Q):MAGNITUDE_avg")
+}
+#-----------------------------------------------------------------------------------
+record(acalcout, "$(P)$(Q):MAGNITUDE_avg") {
+    field(DESC,  "Moving average of MAGNITUDE")
+    field(EGU,   "V")
+    field(INAA,  "$(P)$(Q):MAGNITUDE_buf")
+    field(NELM,  "5")
+    field(CALC,  "AVG(AA)")  
+}
+#-----------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------
+record(ai, "$(P)$(Q):ADC1") {
+    field(DESC, "Read ADC")
+    field(DTYP, "stream")
+    field(PREC, "2")
+    field(EGU,  "V")
+    field(SCAN, "5 second")
+    field(INP,  "@ametekLockIn.proto getADC(1) $(PORT)")
+}
+#-----------------------------------------------------------------------------------
+record(ai, "$(P)$(Q):ADC2") {
+    field(DESC, "Read ADC2")
+    field(DTYP, "stream")
+    field(PREC, "2")
+    field(EGU,  "V")
+    field(SCAN, "5 second")
+    field(INP,  "@ametekLockIn.proto getADC(2) $(PORT)")
+}
+#-----------------------------------------------------------------------------------
+record(ai, "$(P)$(Q):ADC3") {
+    field(DESC, "Read ADC3")
+    field(DTYP, "stream")
+    field(PREC, "2")
+    field(EGU,  "V")
+    field(SCAN, "5 second")
+    field(INP,  "@ametekLockIn.proto getADC(3) $(PORT)")
+}
+#-----------------------------------------------------------------------------------
+record(ai, "$(P)$(Q):ADC4") {
+    field(DESC, "Read ADC")
+    field(DTYP, "stream")
+    field(PREC, "2")
+    field(EGU,  "V")
+    field(SCAN, "5 second")
+    field(INP,  "@ametekLockIn.proto getADC(4) $(PORT)")
+}
+#-----------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------
 record(longin, "$(P)$(Q):OVERLOAD") {
     field(DESC, "Overload")
@@ -126,7 +236,6 @@ record(longin, "$(P)$(Q):OVERLOAD") {
     field(SCAN, "5 second")
     field(INP,  "@ametekLockIn.proto getOverloadByte $(PORT)")
 }
-
 #-----------------------------------------------------------------------------------
 record(longin, "$(P)$(Q):STAT")
 {
@@ -135,8 +244,7 @@ record(longin, "$(P)$(Q):STAT")
     field(SCAN, "5 second")
     field(INP,  "@ametekLockIn.proto getStatus $(PORT)")
 }
-
-
+#-----------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------
 record(mbbo, "$(P)$(Q):IMODE") {
     field(DESC, "Current mode selector")
@@ -262,59 +370,6 @@ record(mbbo, "$(P)$(Q):ACGAIN")
 }
 
 #------------------------------------------------------------------------------------------
-# Oscillator frequency control
-# Command OF (Oscillator Frequency) can be sent either:
-# 1) with . (dot) - floating point notation, send value in Hz
-# 2) without dot  - fixed point notation, send value in mHz
-# Implementation is done only with floating point notation
-  
-#record(bo, "$(P)$(Q):OF_TOGGLE"){
-#    field(DESC, "Oscillator frequency, toggle")
-#    field(VAL,  "0")
-#    field(ZNAM, "mHz")
-#    field(ONAM, "Hz")
-#}
-#
-#record(scalcout, "$(P)$(Q):OF_CALC"){
-#    field(DESC, "Oscillator freq, check if dot")
-#    field(INPA, "$(P)$(Q):OF_TOGGLE CPP")
-#    field(BB,   "")
-#    field(CC,   ".")
-#    field(CALC, "A=0 ? BB:CC")
-#}
-#
-#record(calcout, "$(P)$(Q):OF_LIMITS"){
-#    field(INPA, "$(P)$(Q):OF_TOGGLE CPP")
-#    field(CALC, "A?250000000:250000")
-#    field(OUT,  "$(P)$(Q):OF.DRVH")
-#}
-#
-#record(scalcout, "$(P)$(Q):OF_UNIT"){
-#    field(DESC, "Oscillator freq, units")
-#    field(INPA, "$(P)$(Q):OF_TOGGLE CPP")
-#    field(BB,   "mHz")
-#    field(CC,   "Hz")
-#    field(CALC, "A=0 ? BB:CC")
-#    field(OUT,  "$(P)$(Q):OF_RBV.EGU")
-#}
-#
-#
-#record(ao, "$(P)$(Q):OF"){
-#    field(DESC, "Oscillator frequency")
-#    field(DTYP, "stream")
-#    field(VAL,  "0")
-#    field(DRVL, "0")
-#    field(DRVH, "250000000")
-#    field(OUT,  "@ametekLockIn.proto setOscillatorFreq($(P)$(Q):OF_CALC.SVAL) $(PORT)")
-#    field(FLNK, "$(P)$(Q):OF_RBV") 
-#}
-#
-#record(ai, "$(P)$(Q):OF_RBV"){
-#    field(DESC, "Oscillator frequency, RBV")
-#    field(DTYP, "stream")
-#    field(SCAN, "1 second")
-#    field(INP,  "@ametekLockIn.proto getOscillatorFreq($(P)$(Q):OF_CALC.SVAL) $(PORT)")
-#}
 record(ao, "$(P)$(Q):OF"){
     field(DESC, "Oscillator frequency")
     field(DTYP, "stream")
@@ -325,6 +380,7 @@ record(ao, "$(P)$(Q):OF"){
     field(FLNK, "$(P)$(Q):OF_RBV.PROC CA") 
 }
 
+#------------------------------------------------------------------------------------------
 record(ai, "$(P)$(Q):OF_RBV"){
     field(DESC, "Oscillator frequency, RBV")
     field(DTYP, "stream")
@@ -333,58 +389,7 @@ record(ai, "$(P)$(Q):OF_RBV"){
     field(INP,  "@ametekLockIn.proto getOscillatorFreq $(PORT)")
 }
 
-
 #------------------------------------------------------------------------------------------
-# Oscillator amplitude control
-#
-#record(bo, "$(P)$(Q):OA_TOGGLE"){
-#    field(DESC, "Oscillator amplitude, toggle")
-#    field(VAL,  "0")
-#    field(ZNAM, "uV")
-#    field(ONAM, "V")
-#}
-#
-#record(scalcout, "$(P)$(Q):OA_CALC"){
-#    field(DESC, "Oscillator ampl, check if dot")
-#    field(INPA, "$(P)$(Q):OA_TOGGLE CPP")
-#    field(BB,   "")
-#    field(CC,   ".")
-#    field(CALC, "A=0 ? BB:CC")
-#}
-#
-#record(scalcout, "$(P)$(Q):OA_UNIT"){
-#    field(DESC, "Oscillator ampl, units")
-#    field(INPA, "$(P)$(Q):OA_TOGGLE CPP")
-#    field(BB,   "uV")
-#    field(CC,   "V")
-#    field(CALC, "A=0 ? BB:CC")
-#    field(OUT,  "$(P)$(Q):OA_RBV.EGU")
-#}
-#
-#
-#record(calcout, "$(P)$(Q):OA_LIMITS"){
-#    field(INPA, "$(P)$(Q):OA_TOGGLE CPP")
-#    field(CALC, "A?5000000:5")
-#    field(OUT,  "$(P)$(Q):OA.DRVH")
-#}
-#
-#record(ao, "$(P)$(Q):OA"){
-#    field(DESC, "Oscillator amplitude")
-#    field(DTYP, "stream")
-#    field(VAL,  "0")
-#    field(DRVL, "0")
-#    field(DRVH, "5000000")
-#    field(OUT,  "@ametekLockIn.proto setOscillatorAmpl($(P)$(Q):OA_CALC.SVAL) $(PORT)")
-#    field(FLNK, "$(P)$(Q):OA_RBV") 
-#}
-#
-#record(ai, "$(P)$(Q):OA_RBV"){
-#    field(DESC, "Oscillator amplitude, RBV")
-#    field(DTYP, "stream")
-#    field(SCAN, "1 second")
-#    field(INP,  "@ametekLockIn.proto getOscillatorAmpl($(P)$(Q):OA_CALC.SVAL) $(PORT)")
-#}
-#
 record(ao, "$(P)$(Q):OA"){
     field(DESC, "Oscillator amplitude")
     field(DTYP, "stream")
@@ -697,6 +702,7 @@ record(ai, "$(P)$(Q):FSTART_RBV"){
     field(INP,  "@ametekLockIn.proto getFStart $(PORT)")
 }
 
+
 # Stop sweep frequency
 record(ao, "$(P)$(Q):FSTOP"){
     field(DESC, "Sweep end frequency")
@@ -705,7 +711,7 @@ record(ao, "$(P)$(Q):FSTOP"){
     field(DRVL, "0")
     field(DRVH, "250000")
     field(OUT,  "@ametekLockIn.proto setFStop $(PORT)")
-    field(FLNK, "$(P)$(Q):FSTOP_RBV.PROC CA") 
+    field(FLNK, "$(P)$(Q):FSTART_RBV.PROC CA") 
 }
 
 record(ai, "$(P)$(Q):FSTOP_RBV"){
@@ -723,16 +729,12 @@ record(ai, "$(P)$(Q):FSTOP_RBV"){
 #
 record(mbbo, "$(P)$(Q):FSTEP_SCALE"){
     field(DESC, "Sweep frequency scale, toggle")
-    field(PINI, "YES")
     field(VAL,  "0")
     field(ZRST, "Log sweep")
     field(ONST, "Linear sweep")
     field(TWST, "Linear seek sweep")
     field(FLNK, "$(P)$(Q):FSTEP")
-
-    info(autosaveFields, "VAL")
 }
-
 record(calcout, "$(P)$(Q):FSTEP_CALCSCALE"){
     field(DESC, "Calculate mask for FSTEP_SCALE_LOG")
     field(INPA, "$(P)$(Q):FSTEP_SCALE CPP")
@@ -762,18 +764,21 @@ record(stringout, "$(P)$(Q):FSTEP_UNITS"){
 
 record(ao, "$(P)$(Q):FSTEP"){
     field(DESC, "Oscillator frequency")
+    field(TPRO, "1")
     field(DTYP, "stream")
     field(VAL,  "0")
     field(EGU,  "Hz")
     field(DRVL, "0")
     field(DRVH, "250000")
     field(OUT,  "@ametekLockIn.proto setFStep($(P)$(Q):FSTEP_SCALE) $(PORT)")
-    field(FLNK, "$(P)$(Q):FSTEP_RBV") 
+    field(FLNK, "$(P)$(Q):FSTEP_RBV.PROC CA") 
+    info(autosaveFields, "VAL")
 }
 
 record(ai, "$(P)$(Q):FSTEP_RBV"){
     field(DESC, "Oscillator frequency, RBV")
     field(DTYP, "stream")
+    field(SCAN, "5 second")
     field(INP,  "@ametekLockIn.proto getFStep $(PORT)")
     field(FLNK, "$(P)$(Q):FSTEP_SCALE_RBV")
 }
@@ -825,7 +830,6 @@ record(mbbi, "$(P)$(Q):SWEEP_RBV"){
     field(INP,  "@ametekLockIn.proto getControlSweep $(PORT)")
 }
 record(ao, "$(P)$(Q):SRATE"){
-    field(DESC, "Step rate")
     field(DTYP, "stream")
     field(PINI, "YES")
     field(EGU,  "s")
@@ -834,7 +838,6 @@ record(ao, "$(P)$(Q):SRATE"){
     field(DRVH, "1000000")
     field(OUT,  "@ametekLockIn.proto setSweepRate $(PORT)")
     field(FLNK, "$(P)$(Q):SRATE_RBV.PROC CA") 
-    info(autosaveFields, "VAL")
 }
 
 record(ai, "$(P)$(Q):SRATE_RBV"){
@@ -906,15 +909,9 @@ record(ao, "$(P)$(Q):NC"){
     field(OUT,  "@ametekLockIn.proto setNewCurve $(PORT)")
 }
 
-record(mbbo, "$(P)$(Q):CBD_1") {
-    field(DESC, "Curve select 1")
-    field(FLNK, "$(P)$(Q):CBD_CALC")
-
-    info(autosaveFields, "VAL")
-}
-
-record(mbbo, "$(P)$(Q):CBD_2") {
-    field(DESC, "Curve select 2")
+record(mbbo, "$(P)$(Q):CBD_SELECT") {
+    field(DESC, "Curve select")
+    field(PINI, "YES")
     field(FLNK, "$(P)$(Q):CBD_CALC")
 
     info(autosaveFields, "VAL")
@@ -923,10 +920,9 @@ record(mbbo, "$(P)$(Q):CBD_2") {
 record(calcout, "$(P)$(Q):CBD_CALC") {
     field(DESC, "Curve buffer calculation")
     field(PINI, "YES")
-    field(INPA, "$(P)$(Q):CBD_1")
-    field(INPB, "$(P)$(Q):CBD_2")
-    field(INPC, "65536")
-    field(CALC, "A+B*C")
+    field(INPA, "$(P)$(Q):CBD_SELECT")
+    field(INPB, "32784")
+    field(CALC, "A OR B")
     field(OUT,  "$(P)$(Q):CBD PP")
     field(OOPT, "On Change")
 }
@@ -942,6 +938,14 @@ record(ai, "$(P)$(Q):CBD_RBV"){
     field(DESC, "Curve def for Std Mode Buff")
     field(DTYP, "stream")
     field(INP,  "@ametekLockIn.proto getCurveBuffer $(PORT)")
+    field(FLNK, "$(P)$(Q):CBD_SET")
+}
+
+record(ao, "$(P)$(Q):CBD_SET"){
+    field(DESC, "Set curve select")
+    field(OMSL, "closed_loop")
+    field(DOL,  "$(P)$(Q):CBD_RBV")
+    field(OUT,  "$(P)$(Q):CBD_SELECT PP")
 }
 
 record(ao, "$(P)$(Q):LEN"){
@@ -953,12 +957,15 @@ record(ao, "$(P)$(Q):LEN"){
     field(DRVH, "100000")
     field(OUT,  "@ametekLockIn.proto setCurveLength $(PORT)")
     field(FLNK, "$(P)$(Q):LEN_RBV")
+
+    info(autosaveFields, "VAL")
 }
 
 record(ai, "$(P)$(Q):LEN_RBV"){
     field(DESC, "Curve length")
     field(DTYP, "stream")
     field(PREC, "0")
+    field(SCAN, "5 second")
     field(INP,  "@ametekLockIn.proto getCurveLength $(PORT)")
 }
 
@@ -1059,6 +1066,43 @@ record(waveform, "$(P)$(Q):FreqArr-Act"){
     field(INP,  "@ametekLockIn.proto getCurve(15) $(PORT)")
 }
 
+record(waveform, "$(P)$(Q):ADC1-Act"){
+    field(DESC, "sweep ADC1")
+    field(DTYP, "stream")
+    field(FTVL, "FLOAT")
+    field(NELM, "100000")
+    field(INP,  "@ametekLockIn.proto getCurve(8) $(PORT)")
+}
+record(waveform, "$(P)$(Q):ADC2-Act"){
+    field(DESC, "sweep ADC2")
+    field(DTYP, "stream")
+    field(FTVL, "FLOAT")
+    field(NELM, "100000")
+    field(INP,  "@ametekLockIn.proto getCurve(9) $(PORT)")
+}
+record(waveform, "$(P)$(Q):ADC3-Act"){
+    field(DESC, "sweep ADC3")
+    field(DTYP, "stream")
+    field(FTVL, "FLOAT")
+    field(NELM, "100000")
+    field(INP,  "@ametekLockIn.proto getCurve(10) $(PORT)")
+}
+record(waveform, "$(P)$(Q):ADC4-Act"){
+    field(DESC, "sweep ADC4")
+    field(DTYP, "stream")
+    field(FTVL, "FLOAT")
+    field(NELM, "100000")
+    field(INP,  "@ametekLockIn.proto getCurve(11) $(PORT)")
+}
+
+
+
+
+
+
+
+
+
 # Process curve records when acquisition has finished
 record(calcout, "$(P)$(Q):CalcAcqCmplt") {
     field(DESC, "Acquisition complete calc")
@@ -1074,6 +1118,10 @@ record(fanout, "$(P)$(Q):GetCurves") {
     field(LNK1, "$(P)$(Q):DC_Y")
     field(LNK2, "$(P)$(Q):MagnArr-Act")
     field(LNK3, "$(P)$(Q):PhsArr-Act")
+    field(LNK4, "$(P)$(Q):ADC1-Act")
+    field(LNK5, "$(P)$(Q):ADC2-Act")
+    field(LNK6, "$(P)$(Q):ADC3-Act")
+    field(LNK7, "$(P)$(Q):ADC4-Act")
     field(LNKE, "$(P)$(Q):FreqArr-Act")
 }
 
