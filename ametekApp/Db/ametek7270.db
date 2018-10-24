@@ -711,7 +711,7 @@ record(ao, "$(P)$(Q):FSTOP"){
     field(DRVL, "0")
     field(DRVH, "250000")
     field(OUT,  "@ametekLockIn.proto setFStop $(PORT)")
-    field(FLNK, "$(P)$(Q):FSTART_RBV.PROC CA") 
+    field(FLNK, "$(P)$(Q):FSTOP_RBV.PROC CA") 
 }
 
 record(ai, "$(P)$(Q):FSTOP_RBV"){
@@ -734,7 +734,9 @@ record(mbbo, "$(P)$(Q):FSTEP_SCALE"){
     field(ONST, "Linear sweep")
     field(TWST, "Linear seek sweep")
     field(FLNK, "$(P)$(Q):FSTEP")
+    info(autosaveFields, "VAL")
 }
+
 record(calcout, "$(P)$(Q):FSTEP_CALCSCALE"){
     field(DESC, "Calculate mask for FSTEP_SCALE_LOG")
     field(INPA, "$(P)$(Q):FSTEP_SCALE CPP")
@@ -830,6 +832,7 @@ record(mbbi, "$(P)$(Q):SWEEP_RBV"){
     field(INP,  "@ametekLockIn.proto getControlSweep $(PORT)")
 }
 record(ao, "$(P)$(Q):SRATE"){
+    field(DESC, "Step rate")
     field(DTYP, "stream")
     field(PINI, "YES")
     field(EGU,  "s")
@@ -838,6 +841,7 @@ record(ao, "$(P)$(Q):SRATE"){
     field(DRVH, "1000000")
     field(OUT,  "@ametekLockIn.proto setSweepRate $(PORT)")
     field(FLNK, "$(P)$(Q):SRATE_RBV.PROC CA") 
+    info(autosaveFields, "VAL")
 }
 
 record(ai, "$(P)$(Q):SRATE_RBV"){
