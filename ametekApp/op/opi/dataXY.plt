@@ -11,6 +11,11 @@
     <start>-5 minutes 0.0 seconds</start>
     <end>now</end>
     <archive_rescale>NONE</archive_rescale>
+    <foreground>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+    </foreground>
     <background>
         <red>200</red>
         <green>205</green>
@@ -96,7 +101,7 @@
         <pv>
             <display_name>X</display_name>
             <visible>true</visible>
-            <name>AM:X_RBV</name>
+            <name>$(P)$(Q):X_RBV</name>
             <axis>0</axis>
             <color>
                 <red>255</red>
@@ -130,7 +135,7 @@
         <pv>
             <display_name>Y</display_name>
             <visible>true</visible>
-            <name>AM:Y_RBV</name>
+            <name>$(P)$(Q):Y_RBV</name>
             <axis>0</axis>
             <color>
                 <red>170</red>
@@ -164,7 +169,7 @@
         <pv>
             <display_name>Frequency</display_name>
             <visible>true</visible>
-            <name>AM:OF_RBV</name>
+            <name>$(P)$(Q):OF_RBV</name>
             <axis>2</axis>
             <color>
                 <red>4</red>
