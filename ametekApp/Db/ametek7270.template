@@ -1096,13 +1096,6 @@ record(waveform, "$(P)$(Q):ADC4-Act"){
 }
 
 
-
-
-
-
-
-
-
 # Process curve records when acquisition has finished
 record(calcout, "$(P)$(Q):CalcAcqCmplt") {
     field(DESC, "Acquisition complete calc")
@@ -1125,3 +1118,23 @@ record(fanout, "$(P)$(Q):GetCurves") {
     field(LNKE, "$(P)$(Q):FreqArr-Act")
 }
 
+# Write to file curve data to file
+
+record(stringout, "$(P)$(Q):Path"){
+    field(DESC, "Absolut path for file writing")
+    field(VAL,  "0")
+}
+
+record(stringout, "$(P)$(Q):FileName"){
+    field(DESC, "File name, added to the path")
+}
+
+record(aSub, "$(P)$(Q):WriteCurves") {
+    field(SNAM, "asub_write")
+    #inputs: 
+    field(INPA, "$(P)$(Q):Path")	field(FTA, "STRING")  field(NOA, "1")
+    field(INPB, "$(P)$(Q):FileName")	field(FTB, "STRING")  field(NOB, "1")
+    field(INPC, "$(P)$(Q):DC_X")	field(FTC, "FLOAT")   field(NOC, "100000")
+    field(INPD, "$(P)$(Q):DC_Y")	field(FTD, "FLOAT")   field(NOD, "100000")
+    #outputs: 
+}
