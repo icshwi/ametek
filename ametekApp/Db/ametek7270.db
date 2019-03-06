@@ -1121,9 +1121,9 @@ record(fanout, "$(P,undefined)$(Q,undefined):GetCurves") {
 # Write to file curve data to file
 # Writing is implemented in OPI as a python script
 
+
 record(stringout, "$(P,undefined)$(Q,undefined):Path"){
     field(DESC, "Absolut path for file writing")
-    field(VAL,  "0")
 }
 
 record(stringout, "$(P,undefined)$(Q,undefined):FileName"){
