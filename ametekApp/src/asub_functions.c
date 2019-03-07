@@ -44,37 +44,46 @@ float *aTab5    = (float *)precord->h;     // tab 2 (Phase)
 //unsigned nrTab5 = precord->neh;            // nr of elements in tab 2
 
 
-sprintf(fullPathName, "%s/%04d%02d%02d_%02d%02d%02d_%s.txt\n", path, tm->tm_year + 1900, tm->tm_mon + 1, tm->tm_mday, tm->tm_hour, tm->tm_min, tm->tm_sec, filename);
+sprintf(fullPathName, "%s/%04d%02d%02d_%02d%02d%02d_%s.txt", "./", 
+							tm->tm_year + 1900, 
+							tm->tm_mon + 1, 
+							tm->tm_mday, 
+							tm->tm_hour, 
+							tm->tm_min, 
+							tm->tm_sec, 
+							filename);
 printf("fullPathName:%s\n", fullPathName);     
 FILE * pFile;
 int n = 0;
 
 
-      printf("Hello 0\n");
+   printf("Hello 1\n");
    pFile = fopen (fullPathName,"w");
-
-      printf("Hello 1\n");
-   if (pFile!=NULL) {
-      fprintf(pFile, "# Data from Ametek Lock-In amplifier\n");
-      printf("Hello 2\n");
-      fprintf(pFile, "# Data was collected:\n");
-      printf("Hello 3\n");
-      fprintf(pFile, "# %s\n", sweepTime);
-      printf("Hello 4\n");
-      fprintf(pFile, "# Data was saved:\n");
-      printf("Hello 5\n");
-      fprintf(pFile, "# %s\n", asctime(tm));
-      printf("Hello 6\n");
-      fprintf(pFile, "\n");
-      printf("Hello 7\n");
-      fprintf(pFile, "Freq(Hz), DC_X(V), DC_Y(V), Magnitude(V), Phase(deg)\n");
-
-      printf("Hello 8\n");
-      //for (int n = 0 ; n < nrTab1 ; n++) {
-      for (n = 0 ; n < 3 ; n++) {
-          fprintf (pFile, "%f\t%f\t%f\t%f\t%f\n", aTab1[n], aTab2[n], aTab3[n], aTab4[4], aTab5[5]);
-      }
+   if (pFile == NULL) {
+      printf(" [ERROR] The file [%s] cannot be opened... exit\n", fullPathName);
+      return 0;
    }
+
+   fprintf(pFile, "# Data from Ametek Lock-In amplifier\n");
+   printf("Hello 2\n");
+   fprintf(pFile, "# Data was collected:\n");
+   printf("Hello 3\n");
+   fprintf(pFile, "# %s\n", sweepTime);
+   printf("Hello 4\n");
+   fprintf(pFile, "# Data was saved:\n");
+   printf("Hello 5\n");
+   fprintf(pFile, "# %s\n", asctime(tm));
+   printf("Hello 6\n");
+   fprintf(pFile, "\n");
+   printf("Hello 7\n");
+   fprintf(pFile, "Freq(Hz), DC_X(V), DC_Y(V), Magnitude(V), Phase(deg)\n");
+
+   printf("Hello 8\n");
+   //for (int n = 0 ; n < nrTab1 ; n++) {
+   for (n = 0 ; n < 3 ; n++) {
+       fprintf (pFile, "%f\t%f\t%f\t%f\t%f\n", aTab1[n], aTab2[n], aTab3[n], aTab4[4], aTab5[5]);
+   }
+
    fclose (pFile);
 
 
