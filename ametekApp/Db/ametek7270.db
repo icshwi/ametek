@@ -1116,26 +1116,42 @@ record(fanout, "$(P,undefined)$(Q,undefined):GetCurves") {
     field(LNK6, "$(P,undefined)$(Q,undefined):ADC3-Act")
     field(LNK7, "$(P,undefined)$(Q,undefined):ADC4-Act")
     field(LNKE, "$(P,undefined)$(Q,undefined):FreqArr-Act")
+    field(FLNK, "$(P,undefined)$(Q,undefined):TimeSweep")
+}
+
+record(stringin, "$(P,undefined)$(Q,undefined):TimeSweep") {
+    field(DESC, "")
+    field(DTYP, "Soft Timestamp")
+    field(TSEL, "$(P,undefined)$(Q,undefined):GetCurves.TIME")
+    field(INP,  "@%Y-%m-%d %H:%M:%S.%03f")
+
 }
 
 # Write to file curve data to file
-# Writing is implemented in OPI as a python script
-
 
 record(stringout, "$(P,undefined)$(Q,undefined):Path"){
     field(DESC, "Absolut path for file writing")
+    field(VAL,  "0")
 }
 
 record(stringout, "$(P,undefined)$(Q,undefined):FileName"){
     field(DESC, "File name, added to the path")
 }
 
+# writing data was moved from EPICS DB to python script in OPI
+# this part is not used any more.
+# it was not delete in case somebody want to use it in the future....
+
 record(aSub, "$(P,undefined)$(Q,undefined):WriteCurves") {
     field(SNAM, "asub_write")
     #inputs: 
     field(INPA, "$(P,undefined)$(Q,undefined):Path")	field(FTA, "STRING")  field(NOA, "1")
     field(INPB, "$(P,undefined)$(Q,undefined):FileName")	field(FTB, "STRING")  field(NOB, "1")
-    field(INPC, "$(P,undefined)$(Q,undefined):DC_X")	field(FTC, "FLOAT")   field(NOC, "100000")
-    field(INPD, "$(P,undefined)$(Q,undefined):DC_Y")	field(FTD, "FLOAT")   field(NOD, "100000")
+    field(INPC, "$(P,undefined)$(Q,undefined):TimeSweep")	field(FTC, "STRING")  field(NOC, "1")
+    field(INPD, "$(P,undefined)$(Q,undefined):FreqArr-Act")	field(FTD, "FLOAT")   field(NOD, "100000")
+    field(INPE, "$(P,undefined)$(Q,undefined):DC_X")	field(FTE, "FLOAT")   field(NOE, "100000")
+    field(INPF, "$(P,undefined)$(Q,undefined):DC_Y")	field(FTF, "FLOAT")   field(NOF, "100000")
+    field(INPG, "$(P,undefined)$(Q,undefined):MagnArr-Act")	field(FTG, "FLOAT")   field(NOG, "100000")
+    field(INPH, "$(P,undefined)$(Q,undefined):PhsArr-Act")	field(FTH, "FLOAT")   field(NOH, "100000")
     #outputs: 
 }
